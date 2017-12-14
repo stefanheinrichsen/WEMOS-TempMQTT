@@ -1,0 +1,13 @@
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASS "YOUR_WIFI_PASSWD"
+
+const char mqttServer[] = "YOUR_MQTT_BROKER";
+const char mqttTopic[] = "YOUR_MQTT_TOPIC";
+
+// How long to wait between measurements (seconds)
+// Default: 300 seconds = 5 minutes
+const unsigned int  measureDelay = 300;
+
+// How long to wait for a OTA Update after a measurement (seconds)
+// Default: 5 seconds
+const unsigned int otaDelay = 5;
