@@ -1,13 +1,26 @@
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASS "YOUR_WIFI_PASSWD"
+// Base-Hostename
+// Setup will add the MAC address to this string
+// Needed for Over The Air (OTA) updates
 
-const char mqttServer[] = "YOUR_MQTT_BROKER";
-const char mqttTopic[] = "YOUR_MQTT_TOPIC";
+#define HOSTNAME "ESP8266-OTA-"
 
-// How long to wait between measurements (seconds)
-// Default: 300 seconds = 5 minutes
-const unsigned int  measureDelay = 300;
+// WiFi crendentials
+const char* wifi_ssid = "YOUR-SSID";
+const char* wifi_pass = "YOUR-PASSWORD";
 
-// How long to wait for a OTA Update after a measurement (seconds)
-// Default: 5 seconds
-const unsigned int otaDelay = 5;
+// MQTT broker to send data to
+const char mqttServer[] = "YOUR-MQTT-SERVER-IP";
+
+// Set a user defined, fixed topic
+// If this is empty the ESP will publish to the WiFi-MAC Adress per default
+// It can be changed via a MQTT message to MAC/location with the new topic as payload
+const char mqttUserTopic[] = "";
+
+// How long to wait between measurements (in ms)
+const unsigned int measureDelay = 30000;
+
+// Minimum delay between two consecutive reads from DHT22 sensor. DHT22 should not be read
+// more often than every 2 seonds.
+// default: 2000 ms
+const unsigned int dhtInterval = 2000;
+
